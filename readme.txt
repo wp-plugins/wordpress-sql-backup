@@ -1,5 +1,5 @@
 === WordPress SQL Backup ===
-Contributors: alexandanthony
+Contributors: alexandanthony, Adzbierajewski
 Donate link: http://anthony.strangebutfunny.net/
 Tags: wordpress, backup
 Requires at least: 3.2.1
