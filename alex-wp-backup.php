@@ -1,7 +1,7 @@
 ﻿<?php
 /*
-Plugin Name: Alex wp Backup
-Plugin URI: http://anthonyzb.users.sourceforge.net/?page_id=36
+Plugin Name: WordPress SQL Backup
+Plugin URI: http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
 Description: Alex wp Backup allows you to create an sql backup of your WordPress database
 Version: 1.0
 Author: Alex and Anthony Zbierajewski
