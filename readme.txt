@@ -20,3 +20,7 @@ e.g.
 
 1. Upload `the directory "wp-backup"` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
+
+== Screenshots ==
+
+1. Here's a screenshot! so you can see it in action
