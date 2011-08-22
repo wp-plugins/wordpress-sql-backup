@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== WordPress SQL Backup ===
 Contributors: alexandanthony
 Donate link: http://anthony.strangebutfunny.net/
 Tags: wordpress, backup
