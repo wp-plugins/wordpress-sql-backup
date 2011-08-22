@@ -1,12 +1,4 @@
 <?php
-
-/***************************************************************
- * SQL_Export class
- * By Adam Globus-Hoenich, 2004 (adam@phenaproxima.net)
- * Use this class as freely as you like. It is 100% free and
- * modifiable :)
-***************************************************************/
-
 class SQL_Export
 {
 	var $cnx;
@@ -104,5 +96,4 @@ class SQL_Export
 		die($err);
 	}
 }
-
 ?>

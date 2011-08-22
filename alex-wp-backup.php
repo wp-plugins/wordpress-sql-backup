@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Plugin Name: WordPress SQL Backup
 Plugin URI: http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
@@ -52,5 +52,4 @@ echo "</textarea>";
 	echo '</div>';
 }
 add_action('admin_menu', 'alex_plugin_menu');
-
 ?>
