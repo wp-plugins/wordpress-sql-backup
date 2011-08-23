@@ -23,4 +23,4 @@ e.g.
 
 == Screenshots ==
 
-1. Here's a screenshot of it in action:
+1. Here's a screenshot of it in action
