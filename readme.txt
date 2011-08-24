@@ -24,3 +24,9 @@ e.g.
 == Screenshots ==
 
 1. Here's a screenshot of it in action
+
+== Frequently Asked Questions ==
+
+= Is this plugin compatible with WordPress Multi Site? =
+
+No, This plugin is NOT recommended for WordPress Multi Site websites, it allows every admin to every blog access to your backup.
