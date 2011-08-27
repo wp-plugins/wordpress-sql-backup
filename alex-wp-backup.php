@@ -3,7 +3,7 @@
 Plugin Name: WordPress SQL Backup
 Plugin URI: http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
 Description: WordPress Backup allows you to create an sql backup of your WordPress database
-Version: 2.0
+Version: 3.0
 Author: Alex and Anthony
 Author URI: http://www.strangebutfunny.net/
 license: GPL 
