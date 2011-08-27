@@ -8,7 +8,18 @@ Author: Alex and Anthony
 Author URI: http://www.strangebutfunny.net/
 license: GPL 
 */
-
+add_option( 'alex_backup_filename', 'nothing' );
+add_option( 'alex_backup_urlpath', 'nothing' );
+add_action('admin_notices', 'alex_backup_admin_notices');
+function alex_backup_admin_notices() {
+	$backup_options = get_option('dbmanager_options');
+	if(!@file_exists(WP_CONTENT_DIR . '/alex-backups/' . 'index.php')) {
+		echo '<div class="error" style="text-align: center;"><p style="color: red; font-size: 14px; font-weight: bold;">'.__('The folder /wp-content/alex-backups/ is visible to the public!', 'wp-postratings').'</p><p>'.sprintf(__('To fix this, create an empty file called <strong>index.php</strong> in the directory <strong>wp-content/alex-backups</strong>', 'wp-postratings')).'</p></div>';
+	}
+}
+	if(!@file_exists(WP_CONTENT_DIR . '/alex-backups/')) {
+mkdir(WP_CONTENT_DIR . "/alex-backups");
+	}
 function alex_plugin_menu() {
 	add_menu_page('Backup Site', 'Backup Site', 'manage_options', 'alex_wp_backup', 'alex_plugin_options'); 
 }
@@ -22,30 +33,14 @@ function alex_plugin_options() {
 	if(isset($_REQUEST["action"])){
 	if($_REQUEST["action"]=="backup"){
 			require("sql_export.php");
-			
-	//Connect to DB the old fashioned way and get the names of the tables on the server
-	$cnx = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die(mysql_error());
-	mysql_select_db(DB_NAME, $cnx) or die(mysql_error());
-	$sql = "SHOW TABLES FROM " . DB_NAME;
-$tables = mysql_query($sql);
-	//Create a list of tables to be exported
-	$table_list = array();
-	while($t = mysql_fetch_array($tables))
-	{
-		array_push($table_list, $t[0]);
+echo "What do you want to do?<br />";
+echo "<h3><a href='" . get_option('alex_backup_urlpath') . "'>Directly download the backup file</a></h3>";
+echo "<h3><a href='admin.php?page=alex_wp_backup&action=email_to_admin'>Email this backup to the administrator's email as an attachment</a></h3>";
 	}
-
-	//Instantiate the SQL_Export class
-
-	$e = new SQL_Export(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, $table_list);
-	//Run the export
-	echo "<p>Here's your entire wordpress database in sql form, if anything goes wrong simply drop your existing tables and run this as an sql query.</p>";
-echo "<textarea rows=20 cols=100>";
-	echo $e->export();
-echo "</textarea>";
-	//Clean up the joint
-	mysql_close($e->cnx);
-	mysql_close($cnx);
+	if($_REQUEST["action"]=="email_to_admin"){
+	
+	wp_mail(get_option('admin_email'),'Alex Wordpress Backup', "Here's your backup","" ,get_option("alex_backup_filename"));
+	echo "There!, I sent the backup as an attachment to your email The attached backup file should look something like 4958e2917dbf36ea53b46c6b954917e9.sql Have fun!";
 	}
 	}
 	echo "<br /><p>Please visit my site <a href=http://www.strangebutfunny.net/>http://www.strangebutfunny.net</a></p>";

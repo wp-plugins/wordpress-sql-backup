@@ -7,6 +7,7 @@ Tested up to: 3.2.1
 Stable tag: 2.0
 
 WP Backup is a plugin that allows you to easily preform an sql backup from within your dashboard. The plugin is very secure and only allows administrators to preform a backup.
+ This plugin allows you to create a backup and download it or email it to the administrator as an attatchment.
 
 == Description ==
 
@@ -18,15 +19,18 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `the directory "wordpress-sql-backup"` to the `/wp-content/plugins/` directory
+1. Upload `the directory "wp-backup"` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-== Screenshots ==
+== Changelog ==
 
-1. Here's a screenshot of it in action
+= 1.0 =
+* Initial Release
 
-== Frequently Asked Questions ==
+= 2.0 =
+* Wrong encoding bug fix
 
-= Is this plugin compatible with WordPress Multi Site? =
-
-No, This plugin is NOT recommended for WordPress Multi Site websites, it allows every admin to every blog access to your backup.
+= 3.0 =
+* Unable to restore backed up sql files
+* Ability to download sql file to your computer
+* Ability to email the sql file to the administrator as an attatchment
