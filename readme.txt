@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: alexandanthony
+Contributors: alexandanthony, Adzbierajewski
 Donate link: http://anthony.strangebutfunny.net/
 Tags: wordpress, backup
 Requires at least: 3.2.1
@@ -12,7 +12,7 @@ WP Backup is a plugin that allows you to easily preform an sql backup from withi
 == Description ==
 
 WP Backup is a plugin that allows you to easily preform an sql backup from within your dashboard. The plugin is very secure and only allows administrators to preform a backup.
-
+ This plugin allows you to create a backup and download it or email it to the administrator as an attatchment.
 == Installation ==
 
 This section describes how to install the plugin and get it working.
