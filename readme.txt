@@ -19,8 +19,13 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `the directory "wp-backup"` to the `/wp-content/plugins/` directory
+1. Upload `the directory "wordpress-sql-backup"` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to "Backup Site" in the dashboard to backup or download the backup or email the backup to yourself
+
+== Screenshots ==
+
+1. Here's a screenshot of it in action
 
 == Changelog ==
 
