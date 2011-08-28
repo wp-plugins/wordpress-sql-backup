@@ -36,6 +36,6 @@ e.g.
 * Wrong encoding bug fix
 
 = 3.0 =
-* Unable to restore backed up sql files
+* Unable to restore backed up sql files bug fixed
 * Ability to download sql file to your computer
 * Ability to email the sql file to the administrator as an attatchment
