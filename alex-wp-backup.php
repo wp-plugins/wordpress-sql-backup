@@ -3,7 +3,7 @@
 Plugin Name: WordPress SQL Backup
 Plugin URI: http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
 Description: WordPress Backup allows you to create an sql backup of your WordPress database
-Version: 3.0
+Version: 4.0
 Author: Alex and Anthony
 Author URI: http://www.strangebutfunny.net/
 license: GPL 
@@ -17,8 +17,14 @@ function alex_backup_admin_notices() {
 		echo '<div class="error" style="text-align: center;"><p style="color: red; font-size: 14px; font-weight: bold;">'.__('The folder /wp-content/alex-backups/ is visible to the public!', 'wp-postratings').'</p><p>'.sprintf(__('To fix this, create an empty file called <strong>index.php</strong> in the directory <strong>wp-content/alex-backups</strong>', 'wp-postratings')).'</p></div>';
 	}
 }
+
 	if(!@file_exists(WP_CONTENT_DIR . '/alex-backups/')) {
 mkdir(WP_CONTENT_DIR . "/alex-backups");
+	}
+	if(!@file_exists(WP_CONTENT_DIR . '/alex-backups/index.php')) {
+if (!copy(WP_CONTENT_DIR . "/plugins/wordpress-sql-backup/index.php", WP_CONTENT_DIR . "/alex-backups/index.php")) {
+    echo "failed to write file '" . WP_CONTENT_DIR . "/alex-backups/index.php" / "' in '" . WP_CONTENT_DIR . "/alex-backups/" . "'";
+}
 	}
 function alex_plugin_menu() {
 	add_menu_page('Backup Site', 'Backup Site', 'manage_options', 'alex_wp_backup', 'alex_plugin_options'); 
