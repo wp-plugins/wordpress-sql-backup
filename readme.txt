@@ -46,3 +46,13 @@ e.g.
 
 = 5.0 =
 * Ability to use alternatives to "exec()" such as "passthru()" and "system()" added
+
+== Frequently Asked Questions ==
+
+= Is this plugin compatible with WordPress Multi Site? =
+
+No, This plugin is NOT recommended for WordPress Multi Site websites, it allows every admin to every blog access to your backup.
+
+= How do I tell when a backup was created? =
+
+Usually most computers (PC, Linux and Mac) have a "date modified" feature in the file manager, that will tell you when it was downloaded to your PC, or if you chose to send it in an email, it will say in your email provider the date you recieved the message.
