@@ -9,7 +9,14 @@ update_option('alex_backup_urlpath', get_bloginfo('wpurl') . '/wp-content' . '/a
 
 
 $backupfile = WP_CONTENT_DIR . '/alex-backups/' . $filename;
-
+	if(get_option("alex_backup_whattouse")=="exec"){
 exec("mysqldump --opt -h" . DB_HOST . " -u" . DB_USER . " -p" . DB_PASSWORD . " " . DB_NAME . " > " . $backupfile . "");
+		}
+			if(get_option("alex_backup_whattouse")=="passthru"){
+passthru("mysqldump --opt -h" . DB_HOST . " -u" . DB_USER . " -p" . DB_PASSWORD . " " . DB_NAME . " > " . $backupfile . "");
+		}
+			if(get_option("alex_backup_whattouse")=="system"){
+system("mysqldump --opt -h" . DB_HOST . " -u" . DB_USER . " -p" . DB_PASSWORD . " " . DB_NAME . " > " . $backupfile . "");
+		}
 echo "The backup was completed sucessfully!<br />";
 ?>
