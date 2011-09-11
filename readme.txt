@@ -1,20 +1,20 @@
 === Plugin Name ===
 Contributors: alexandanthony, Adzbierajewski
 Donate link: http://anthony.strangebutfunny.net/
-Tags: wordpress, backup
+Tags: wordpress, sql, backup, dropbox, email, attachment, fancy, can, you, read, this
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 6.0
+Stable tag: 7.0
 
 WP Backup is a plugin that allows you to easily preform an sql backup and and create a tar and gzipped backup of your /wp-content/ directory from within your dashboard. The plugin is very secure and only allows administrators to preform a backup.
- This plugin allows you to create a backup and download it or email it to the administrator as an attatchment. This plugin also works great and has been tested on blogs with thousands of posts.
+ This plugin allows you to create a backup and download it or upload it to your Dropbox account or email it to the administrator as an attatchment. This plugin also works great and has been tested on blogs with thousands of posts.
   
  The best way to get fast support is by posting your question in a comment at http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
 
 == Description ==
 
 WP Backup is a plugin that allows you to easily preform an sql backup and and create a tar and gzipped backup of your /wp-content/ directory from within your dashboard. The plugin is very secure and only allows administrators to preform a backup.
- This plugin allows you to create a backup and download it or email it to the administrator as an attatchment. This plugin also works great and has been tested on blogs with thousands of posts.
+ This plugin allows you to create a backup and download it or upload it to your Dropbox account or email it to the administrator as an attatchment. This plugin also works great and has been tested on blogs with thousands of posts.
  
  The best way to get fast support is by posting your question in a comment at http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
 
@@ -53,6 +53,9 @@ e.g.
 
 = 6.0 =
 * Merged with my other plugin Wordpress File Backup
+
+= 7.0 =
+* Ability to upload to your Dropbox account added
 
 == Frequently Asked Questions ==
 

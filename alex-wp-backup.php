@@ -4,7 +4,7 @@ Plugin Name: WordPress SQL Backup
 Plugin URI: http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
 Description: WP Backup is a plugin that allows you to easily preform an sql backup and and create a tar and gzipped backup of your /wp-content/ directory from within your dashboard. The plugin is very secure and only allows administrators to preform a backup.
  This plugin allows you to create a backup and download it or email it to the administrator as an attatchment. This plugin also works great and has been tested on blogs with thousands of posts.
-Version: 6.0
+Version: 7.0
 Author: Alex and Anthony
 Author URI: http://www.strangebutfunny.net/
 license: GPL 
@@ -75,6 +75,21 @@ echo "<h3><a href='" . get_option('alex_backup_urlpath') . "'>Directly download 
 echo "<h3><a href='admin.php?page=alex_wp_backup&action=email_to_admin'>Email this backup to the administrator's email as an attachment</a></h3>";
 echo "<h3><a href='admin.php?page=alex_wp_backup&action=delete_old_sql'>Delete old backup</a></h3>";
 echo "<blockquote>Old backups are automatically deleted when new ones are made, but you can delete old ones manually</blockquote>";
+echo "<h3><a href='admin.php?page=alex_wp_backup&action=upload_to_dropbox_sql'>Upload this backup to my Dropbox</a></h3>";
+	}
+	if($_REQUEST["action"]=="upload_to_dropbox_sql"){
+	if($_REQUEST["dropbox_username_sql"]){
+	require('DropboxUploader.php');
+	$uploader = new DropboxUploader($_REQUEST['dropbox_username'], $_REQUEST['dropbox_password']);
+$uploader->upload(get_option("alex_backup_filename"), '');
+echo 'The file was successfully uploaded to your Dropbox';
+	}
+	echo '<form name="wp_backup_dropbox_auth" action="" method="post"><br />
+<label for="dropbox_username_sql">Dropbox email</label> <input type="text" name="dropbox_username_sql" /><br />
+<label for="dropbox_password_sql">Dropbox password</label> <input type="password" name="dropbox_password_sql" /><br />
+<b>Note: </b> This information is <b>NOT</b> saved!<br />
+<input type="submit" name="submit" value="Continue" />
+</form>';
 	}
 	if($_REQUEST["action"]=="email_to_admin"){
 	
@@ -124,6 +139,21 @@ echo "<h3><a href='" . get_option('alex_file_backup_urlpath') . "'>Directly down
 echo "<h3><a href='admin.php?page=alex_wp_backup&action=email_file_to_admin'>Email this backup to the administrator's email as an attachment</a></h3>";
 echo "<h3><a href='admin.php?page=alex_wp_backup&action=delete_old'>Delete old backup</a></h3>";
 echo "<blockquote>Old backups are automatically deleted when new ones are made, but you can delete old ones manually</blockquote>";
+echo "<h3><a href='admin.php?page=alex_wp_backup&action=upload_to_dropbox_file'>Upload this backup to my Dropbox</a></h3>";
+	}
+		if($_REQUEST["action"]=="upload_to_dropbox_file"){
+	if($_REQUEST["dropbox_username"]){
+	require('DropboxUploader.php');
+	$uploader = new DropboxUploader($_REQUEST['dropbox_username'], $_REQUEST['dropbox_password']);
+$uploader->upload(get_option("alex_file_backup_filename"), '');
+echo 'The file was successfully uploaded to your Dropbox';
+	}
+	echo '<form name="wp_backup_dropbox_auth" action="" method="post"><br />
+<label for="dropbox_username">Dropbox email</label> <input type="text" name="dropbox_username" /><br />
+<label for="dropbox_password">Dropbox password</label> <input type="password" name="dropbox_password" /><br />
+<b>Note: </b> This information is <b>NOT</b> saved!<br />
+<input type="submit" name="submit" value="Continue" />
+</form>';
 	}
 	if($_REQUEST["action"]=="email_file_to_admin"){
 	
