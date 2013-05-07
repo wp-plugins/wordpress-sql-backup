@@ -4,7 +4,7 @@ Donate link: http://anthony.strangebutfunny.net/
 Tags: wordpress, sql, backup, dropbox, email, attachment, fancy, can, you, read, this
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 8.0
+Stable tag: 9.0
 
 WP Backup is a plugin that allows you to easily preform an sql backup and and create a tar and gzipped backup of your /wp-content/ directory from within your dashboard. The plugin is very secure and only allows administrators to preform a backup.
  This plugin allows you to create a backup and download it or upload it to your Dropbox account or email it to the administrator as an attatchment. This plugin also works great and has been tested on blogs with thousands of posts.

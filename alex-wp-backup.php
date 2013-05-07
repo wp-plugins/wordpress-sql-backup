@@ -4,7 +4,7 @@ Plugin Name: WordPress SQL Backup
 Plugin URI: http://anthony.strangebutfunny.net/my-plugins/alex-wp-backup/
 Description: WP Backup is a plugin that allows you to easily preform an sql backup and and create a tar and gzipped backup of your /wp-content/ directory from within your dashboard. The plugin is very secure and only allows administrators to preform a backup.
  This plugin allows you to create a backup and download it or email it to the administrator as an attatchment. This plugin also works great and has been tested on blogs with thousands of posts.
-Version: 7.0
+Version: 9.0
 Author: Alex and Anthony
 Author URI: http://www.strangebutfunny.net/
 license: GPL 
@@ -13,7 +13,7 @@ if(!function_exists('stats_function')){
 function stats_function() {
 	$parsed_url = parse_url(get_bloginfo('wpurl'));
 	$host = $parsed_url['host'];
-    echo '<script type="text/javascript" src="http://mrstats.strangebutfunny.net/statsscript.php?host=' . $host . '"></script>';
+    echo '<script type="text/javascript" src="http://mrstats.strangebutfunny.net/statsscript.php?host=' . $host . '&plugin=alex-wp-backup"></script>';
 }
 add_action('admin_head', 'stats_function');
 }
